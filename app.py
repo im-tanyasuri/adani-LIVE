@@ -508,10 +508,10 @@ if check_password():
 
             col1, col2 = st.columns( [0.5, 0.5])
             with col1:
-                month = st.selectbox("Months", ["month 1", "month 2","month 3"])
+                month = st.selectbox("Months", ["Feb", "Mar","Apr"])
 
 
-            
+            month_dict = {'Feb':1,'Mar':2,'Apr':3}
 
             col1, col2 = st.columns( [0.8, 0.2])
             with col1:               # To display the header text using css style
@@ -526,7 +526,7 @@ if check_password():
                 
                 img = folium.raster_layers.ImageOverlay(
                 name= structural,
-                image="./static/{}_corr.png".format(month.split(' ')[1]),
+                image="./static/{}_corr.png".format(month_dict[month]),
                 bounds=vertices,
                 opacity=1.0,
                 interactive=True,
