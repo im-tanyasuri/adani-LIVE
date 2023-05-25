@@ -54,10 +54,10 @@ if check_password():
    
 # Create a polygon object
 # polygon = Polygon(polygon_coordinates)
-    df = pd.read_csv('./static/WTGL-RK.csv')
+    df = pd.read_csv('./static/WTGL-RK_names.csv')
     column1 = df['latitude']
     column2 = df['longitude']
-   # names = df['name']
+    names = df['name']
 
     tuples = list(zip(column2,column1 ))
 
@@ -201,7 +201,7 @@ if check_password():
             for i in range(len(locations)):
                         folium.Marker(location=locations[i],
                         icon= folium.Icon(color='blue',
-                        icon_color='yellow',icon ="tower"),popup='Name : {} \n Coordinates: {}'.format('name',locations[i])).add_to(map)
+                        icon_color='yellow',icon ="tower"),popup='Name : {} \n Coordinates: {}'.format(names[i],locations[i])).add_to(map)
             polygon = folium.Polygon(locations=verticesROW, color='black', fill_color=None, fill_opacity=1.0).add_to(map)
             st_map = st_folium(map, width=1100, height=550)
             st.image(Image.open("./static/Dashboard_legend.png"),width=300 )
@@ -277,7 +277,7 @@ if check_password():
                 for i in range(len(locations)):
                         folium.Marker(location=locations[i],
                         icon= folium.Icon(color='blue',
-                        icon_color='yellow',icon ="tower"),popup='Name : {} \n Coordinates: {}'.format('names',locations[i])).add_to(map)
+                        icon_color='yellow',icon ="tower"),popup='Name : {} \n Coordinates: {}'.format(names[i],locations[i])).add_to(map)
             
                     #folium.Marker(location=locations[i],radius=2,color='black').add_to(map)
                 polygon = folium.Polygon(locations=verticesROW, color='black', fill_color=None, fill_opacity=1.0).add_to(map)
@@ -300,7 +300,7 @@ if check_password():
                 for i in range(len(locations)):
                         folium.Marker(location=locations[i],
                         icon= folium.Icon(color='blue', 
-                        icon_color='yellow',icon ="tower"),popup='Name : {} \n Coordinates: {}'.format('names',locations[i])).add_to(map)
+                        icon_color='yellow',icon ="tower"),popup='Name : {} \n Coordinates: {}'.format(names[i],locations[i])).add_to(map)
             
                     #folium.Marker(location=locations[i],radius=2,color='black').add_to(map)
                 polygon = folium.Polygon(locations=verticesROW, color='black', fill_color=None, fill_opacity=1.0).add_to(map)
@@ -406,7 +406,7 @@ if check_password():
                     #     folium.CircleMarker(location=locations[i],radius=30,color='red',line_width=40, opacity=5).add_to(map)
                     folium.Marker(location=locations[i],
                         icon= folium.Icon(color='blue',
-                        icon_color='yellow',icon ="tower"),popup='Name : {} \n Coordinates: {}'.format('names',locations[i])).add_to(map)
+                        icon_color='yellow',icon ="tower"),popup='Name : {} \n Coordinates: {}'.format(names[i],locations[i])).add_to(map)
                 polygon = folium.Polygon(locations=verticesROW, color='black', fill_color=None, fill_opacity=1.0).add_to(map)
 
                 st_map = st_folium(map, width=1100, height=550)
@@ -540,11 +540,11 @@ if check_password():
                         folium.CircleMarker(location=locations[i],radius=30,color='red',line_width=50, opacity=5).add_to(map)
                         folium.Marker(location=locations[i],
                             icon= folium.Icon(color='blue',
-                            icon_color='yellow',icon ="tower"),popup='Name : {} \n Coordinates: {}'.format('names',locations[i])).add_to(map)
+                            icon_color='yellow',icon ="tower"),popup='Name : {} \n Coordinates: {}'.format(names[i],locations[i])).add_to(map)
                     else:
                         folium.Marker(location=locations[i],
                             icon= folium.Icon(color='blue',
-                            icon_color='yellow',icon ="tower"),popup='Name : {} \n Coordinates: {}'.format('names',locations[i])).add_to(map)
+                            icon_color='yellow',icon ="tower"),popup='Name : {} \n Coordinates: {}'.format(names[i],locations[i])).add_to(map)
                 polygon = folium.Polygon(locations=verticesROW, color='black', fill_color=None, fill_opacity=1.0).add_to(map)
                 
 
@@ -635,7 +635,7 @@ if check_password():
                 for i in range(len(locations)):
                         folium.Marker(location=locations[i],
                         icon= folium.Icon(color='blue',
-                        icon_color='yellow',icon ="tower"),popup='Name : {} \n Coordinates: {}'.format('names',locations[i])).add_to(map)
+                        icon_color='yellow',icon ="tower"),popup='Name : {} \n Coordinates: {}'.format(names[i],locations[i])).add_to(map)
             
                 polygon = folium.Polygon(locations=verticesROW, color='black', fill_color=None, fill_opacity=1.0).add_to(map)
 
@@ -710,7 +710,7 @@ if check_password():
                 for i in range(len(locations)):
                     folium.Marker(location=locations[i],
                     icon= folium.Icon(color='blue',
-                    icon_color='yellow',icon ="tower"),popup='Name : {} \n Coordinates: {}'.format('names',locations[i])).add_to(map)
+                    icon_color='yellow',icon ="tower"),popup='Name : {} \n Coordinates: {}'.format(names[i],locations[i])).add_to(map)
             
                     folium.Marker(location=locations[i],radius=2,color='black').add_to(map)
                 polygon = folium.Polygon(locations=verticesROW, color='black', fill_color=None, fill_opacity=1.0).add_to(map)
