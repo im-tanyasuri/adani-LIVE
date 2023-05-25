@@ -74,17 +74,17 @@ import csv
 # all = list(ret_left.coords)+list(ret_right.coords)
 # p = Polygon([ *list(ret_right.coords)[::-1],*list(ret_left.coords)])
 
-df = pd.read_csv('./static/adani_report.csv')
-#df = df.dropna(thresh=4)
-#df = pd.read_csv('./static/GeneratedReport - GeneratedReport.csv')
+# df = pd.read_csv('./static/adani_report.csv')
+# #df = df.dropna(thresh=4)
+# #df = pd.read_csv('./static/GeneratedReport - GeneratedReport.csv')
 
-insights = [ "Vegetation encroachment","Land Subsidence","Potential Fouling","Corrosion"]
-for i in insights:
-    df_temp = df[['latitude', 'longitude','name', i]]
-    df_temp = df_temp.dropna(thresh=3)
-    #df_temp = df_temp.loc[df_temp[i] == ]
+# insights = [ "Vegetation encroachment","Land Subsidence","Potential Fouling","Corrosion"]
+# for i in insights:
+#     df_temp = df[['latitude', 'longitude','name', i]]
+#     df_temp = df_temp.dropna(thresh=3)
+#     #df_temp = df_temp.loc[df_temp[i] == ]
 
-    df_temp.to_csv('./static/{}.csv'.format(''.join(i)),index = False)
+#     df_temp.to_csv('./static/{}.csv'.format(''.join(i)),index = False)
 # print(df['Temperature'].unique())
 # insights = ["Temperature", "Vegetation encroachment","Land Subsidence","Potential Fouling","Corrosion"]
 # for i in insights:
@@ -146,12 +146,12 @@ for i in insights:
 
 #     ) as dst:
 #         dst.write(file_)
-# im = Image.open('./static/NDMIApril1.tif')
-# im.save('./static/NDMIApril1.png')
+# im = Image.open('./static/HOTSPOTApril.tif')
+# im.save('./static/HOTSPOTApril.png')
 # print(im)
 
 
-# img = Image.open('./static/NDMIApril1.png')
+# img = Image.open('./static/HOTSPOTApril.png')
 # img = img.convert("RGBA")
 # datas = img.getdata()
 # newData = []
@@ -162,4 +162,30 @@ for i in insights:
 #         newData.append(item)
  
 # img.putdata(newData)
-# img.save('./static/NDMIApril1.png', "PNG")
+# img.save('./static/HOTSPOTApril.png', "PNG")
+from rasterio.merge import merge
+import rasterio as rio
+
+
+output_path = 'C:/Users/tanya/Desktop/Live_adani/tif_files_adani/mosaic_output.tif'
+
+files = os.listdir('C:/Users/tanya/Desktop/Live_adani/tif_files_adani/inSAR/')
+
+raster_to_mosiac =[]
+for p in files:
+    raster = rio.open('C:/Users/tanya/Desktop/Live_adani/tif_files_adani/inSAR/'+p)
+    raster_to_mosiac.append(raster)
+
+mosaic, output = merge(raster_to_mosiac, method='max')
+
+output_meta = raster.meta.copy()
+output_meta.update(
+    {"driver": "GTiff",
+        "height": mosaic.shape[1],
+        "width": mosaic.shape[2],
+        "transform": output
+    }
+)
+
+with rio.open(output_path, "w", **output_meta) as m:
+    m.write(mosaic)
