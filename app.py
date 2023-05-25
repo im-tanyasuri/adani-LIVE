@@ -49,7 +49,7 @@ def check_password():
         # Password correct.
         return True
 
-if True:
+if check_password():
    # st.write("Here goes your normal Streamlit app...")
    
 # Create a polygon object
