@@ -855,7 +855,7 @@ if check_password():
             df_temp = df[['latitude', 'longitude', 'name','Temperature']]
             df_temp = df_temp.loc[df_temp['Temperature'] == 1]
             df_temp["tuple"] = df_temp[["latitude","longitude"]].apply(tuple, axis=1)
-            map = folium.Map(location=[16.754071892422, 76.85516009399588], zoom_start=11, scrollWheelZoom=True, tiles='Stamen Terrain')
+            map = folium.Map(location=[22.606939204923812,74.11067787159304], zoom_start=11, scrollWheelZoom=True, tiles='Stamen Terrain')
             
             folium.TileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
                         attr='ArcGIS',
@@ -878,7 +878,7 @@ if check_password():
             df_temp = df[['latitude', 'longitude','name', 'Vegetation encroachment']]
             df_temp = df_temp.loc[df_temp['Vegetation encroachment'] == 1]
             df_temp["tuple"] = df_temp[["latitude","longitude"]].apply(tuple, axis=1)
-            map = folium.Map(location=[16.754071892422, 76.85516009399588], zoom_start=11, scrollWheelZoom=True, tiles='Stamen Terrain')
+            map = folium.Map(location=[22.606939204923812,74.11067787159304], zoom_start=11, scrollWheelZoom=True, tiles='Stamen Terrain')
             
             folium.TileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
                         attr='ArcGIS',
@@ -897,7 +897,7 @@ if check_password():
             df_temp = df[['latitude', 'longitude', 'name','Land Subsidence']]
             df_temp = df_temp.loc[df_temp['Land Subsidence'] == 1]
             df_temp["tuple"] = df_temp[["latitude","longitude"]].apply(tuple, axis=1)
-            map = folium.Map(location=[16.754071892422, 76.85516009399588], zoom_start=11, scrollWheelZoom=True, tiles='Stamen Terrain')
+            map = folium.Map(location=[22.606939204923812,74.11067787159304], zoom_start=11, scrollWheelZoom=True, tiles='Stamen Terrain')
             
             folium.TileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
                         attr='ArcGIS',
@@ -917,7 +917,7 @@ if check_password():
             df_temp = df[['latitude', 'longitude','name', 'Potential Fouling']]
             df_temp = df_temp.loc[df_temp['Potential Fouling'] == 1]
             df_temp["tuple"] = df_temp[["latitude","longitude"]].apply(tuple, axis=1)
-            map = folium.Map(location=[16.754071892422, 76.85516009399588], zoom_start=11, scrollWheelZoom=True, tiles='Stamen Terrain')
+            map = folium.Map(location=[22.606939204923812,74.11067787159304], zoom_start=11, scrollWheelZoom=True, tiles='Stamen Terrain')
             
             folium.TileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
                         attr='ArcGIS',
@@ -937,7 +937,7 @@ if check_password():
             df_temp = df[['latitude', 'longitude', 'name','Corrosion']]
             df_temp = df_temp.loc[df_temp['Corrosion'] == 1]
             df_temp["tuple"] = df_temp[["latitude","longitude"]].apply(tuple, axis=1)
-            map = folium.Map(location=[16.754071892422, 76.85516009399588], zoom_start=11, scrollWheelZoom=True, tiles='Stamen Terrain')
+            map = folium.Map(location=[22.606939204923812,74.11067787159304], zoom_start=11, scrollWheelZoom=True, tiles='Stamen Terrain')
             
             folium.TileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
                         attr='ArcGIS',
