@@ -895,7 +895,7 @@ if check_password():
 
         elif measure =="Land Subsidence":
             df_temp = df[['latitude', 'longitude', 'name','Land Subsidence']]
-            df_temp = df_temp.loc[df_temp['Land Subsidence'] == 1]
+            df_temp =df_temp.loc[(df_temp['Land Subsidence'] == 'low') | (df_temp['Land Subsidence'] == 'Moderate') | (df_temp['Land Subsidence'] == 'high')]
             df_temp["tuple"] = df_temp[["latitude","longitude"]].apply(tuple, axis=1)
             map = folium.Map(location=[22.606939204923812,74.11067787159304], zoom_start=11, scrollWheelZoom=True, tiles='Stamen Terrain')
             
@@ -915,7 +915,7 @@ if check_password():
 
         elif measure =="Potential Fouling":
             df_temp = df[['latitude', 'longitude','name', 'Potential Fouling']]
-            df_temp = df_temp.loc[df_temp['Potential Fouling'] == 1]
+            df_temp =df_temp.loc[(df_temp['Potential Fouling'] == 'low') | (df_temp['Potential Fouling'] == 'Moderate') | (df_temp['Potential Fouling'] == 'high')]
             df_temp["tuple"] = df_temp[["latitude","longitude"]].apply(tuple, axis=1)
             map = folium.Map(location=[22.606939204923812,74.11067787159304], zoom_start=11, scrollWheelZoom=True, tiles='Stamen Terrain')
             
@@ -935,7 +935,7 @@ if check_password():
 
         elif measure =="Corrosion":
             df_temp = df[['latitude', 'longitude', 'name','Corrosion']]
-            df_temp = df_temp.loc[df_temp['Corrosion'] == 1]
+            df_temp =df_temp.loc[(df_temp['Corrosion'] == 'low') | (df_temp['Corrosion'] == 'Moderate') | (df_temp['Corrosion'] == 'high')]
             df_temp["tuple"] = df_temp[["latitude","longitude"]].apply(tuple, axis=1)
             map = folium.Map(location=[22.606939204923812,74.11067787159304], zoom_start=11, scrollWheelZoom=True, tiles='Stamen Terrain')
             
