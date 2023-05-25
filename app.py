@@ -48,7 +48,7 @@ def check_password():
     else:
         # Password correct.
         return True
-
+    
 if check_password():
    # st.write("Here goes your normal Streamlit app...")
    
