@@ -847,7 +847,7 @@ if check_password():
         measure = st.selectbox("Insight", ["Temperature", "Vegetation encroachment","Land Subsidence","Potential Fouling","Corrosion"])
         if measure =="Temperature":
             df_temp = df[['latitude', 'longitude', 'name','Temperature']]
-            df_temp = df_temp.loc[df_temp['Temperature'] == 1]
+            df_temp = df_temp.loc[(df_temp['Temperature'] == 'low') | (df_temp['Temperature'] == 'Moderate') | (df_temp['Temperature'] == 'high')]
             df_temp["tuple"] = df_temp[["latitude","longitude"]].apply(tuple, axis=1)
             map = folium.Map(location=[22.606939204923812,74.11067787159304], zoom_start=11, scrollWheelZoom=True, tiles='Stamen Terrain')
             
