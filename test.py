@@ -146,28 +146,28 @@ for i in insights:
 
 #     ) as dst:
 #         dst.write(file_)
-# im = Image.open('./static/HOTSPOTApril.tif')
-# im.save('./static/HOTSPOTApril.png')
-# print(im)
+im = Image.open('./static/HOTSPOT.tif')
+im.save('./static/HOTSPOT.png')
+print(im)
 
 
-# img = Image.open('./static/HOTSPOTApril.png')
-# img = img.convert("RGBA")
-# datas = img.getdata()
-# newData = []
-# for item in datas:
-#     if item[0] == 0 and item[1] == 0 and item[2] == 0:
-#         newData.append((0, 0, 0, 0))
-#     else:
-#         newData.append(item)
+img = Image.open('./static/HOTSPOT.png')
+img = img.convert("RGBA")
+datas = img.getdata()
+newData = []
+for item in datas:
+    if item[0] == 0 and item[1] == 0 and item[2] == 0:
+        newData.append((0, 0, 0, 0))
+    else:
+        newData.append(item)
  
-# img.putdata(newData)
-# img.save('./static/HOTSPOTApril.png', "PNG")
+img.putdata(newData)
+img.save('./static/HOTSPOT.png', "PNG")
 # from rasterio.merge import merge
 # import rasterio as rio
 
 
-# output_path = 'C:/Users/tanya/Desktop/Live_adani/tif_files_adani/mosaic_output.tif'
+# output_path = 'C:/Users/tanya/Desktop/Live_adani/tif_files_adani/mosaic_py.tif'
 
 # files = os.listdir('C:/Users/tanya/Desktop/Live_adani/tif_files_adani/inSAR/')
 
