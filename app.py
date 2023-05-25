@@ -253,7 +253,7 @@ if check_password():
 
         col1, col2 = st.columns( [0.8, 0.2])
         with col1:               # To display the header text using css style
-            map = folium.Map(location=[22.78874298462253,72.75006444954514], zoom_start=14, scrollWheelZoom=True, tiles='Stamen Terrain')
+            map = folium.Map(location=[22.5391277778, 73.1608305556], zoom_start=14, scrollWheelZoom=True, tiles='Stamen Terrain')
         
             folium.TileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
                     attr='ArcGIS',
