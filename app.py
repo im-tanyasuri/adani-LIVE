@@ -379,7 +379,7 @@ if check_password():
                 if structural == "Land Subsidence":
                     st.image(Image.open("./static/ls_legend.png"))
                         
-            col1, col2 = st.columns( [0.85, 0.15])
+            col1, col2 = st.columns( [0.8, 0.2])
             with col1:               # To display the header text using css style
                 map = folium.Map(location=[22.606939204923812,74.11067787159304], zoom_start=11, scrollWheelZoom=True, tiles='Stamen Terrain')
             
