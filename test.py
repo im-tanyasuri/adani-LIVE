@@ -146,12 +146,12 @@ import csv
 
 #     ) as dst:
 #         dst.write(file_)
-im = Image.open('./static/tch_adani.tif')
-im.save('./static/tch_adani.png')
+im = Image.open('./static/NDMIApril1.tif')
+im.save('./static/NDMIApril1.png')
 print(im)
 
 
-img = Image.open('./static/tch_adani.png')
+img = Image.open('./static/NDMIApril1.png')
 img = img.convert("RGBA")
 datas = img.getdata()
 newData = []
@@ -162,4 +162,4 @@ for item in datas:
         newData.append(item)
  
 img.putdata(newData)
-img.save('./static/tch_adani.png', "PNG")
+img.save('./static/NDMIApril1.png', "PNG")
