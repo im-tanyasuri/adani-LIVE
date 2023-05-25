@@ -74,17 +74,17 @@ import csv
 # all = list(ret_left.coords)+list(ret_right.coords)
 # p = Polygon([ *list(ret_right.coords)[::-1],*list(ret_left.coords)])
 
-# df = pd.read_csv('./static/report.csv')
-# df = df.dropna(thresh=4)
-# df = pd.read_csv('./static/GeneratedReport - GeneratedReport.csv')
+df = pd.read_csv('./static/adani_report.csv')
+#df = df.dropna(thresh=4)
+#df = pd.read_csv('./static/GeneratedReport - GeneratedReport.csv')
 
-# insights = ["Temperature", "Vegetation encroachment","Land Subsidence","Potential Fouling","Corrosion"]
-# for i in insights:
-#     df_temp = df[['latitude', 'longitude', i]]
-#     df_temp = df_temp.dropna(thresh=3)
-#     #df_temp = df_temp.loc[df_temp[i] == ]
+insights = [ "Vegetation encroachment","Land Subsidence","Potential Fouling","Corrosion"]
+for i in insights:
+    df_temp = df[['latitude', 'longitude','name', i]]
+    df_temp = df_temp.dropna(thresh=3)
+    #df_temp = df_temp.loc[df_temp[i] == ]
 
-#     df_temp.to_csv('./static/{}.csv'.format(''.join(i)),index = False)
+    df_temp.to_csv('./static/{}.csv'.format(''.join(i)),index = False)
 # print(df['Temperature'].unique())
 # insights = ["Temperature", "Vegetation encroachment","Land Subsidence","Potential Fouling","Corrosion"]
 # for i in insights:
@@ -146,20 +146,20 @@ import csv
 
 #     ) as dst:
 #         dst.write(file_)
-im = Image.open('./static/NDMIApril1.tif')
-im.save('./static/NDMIApril1.png')
-print(im)
+# im = Image.open('./static/NDMIApril1.tif')
+# im.save('./static/NDMIApril1.png')
+# print(im)
 
 
-img = Image.open('./static/NDMIApril1.png')
-img = img.convert("RGBA")
-datas = img.getdata()
-newData = []
-for item in datas:
-    if item[0] == 0 and item[1] == 0 and item[2] == 0:
-        newData.append((0, 0, 0, 0))
-    else:
-        newData.append(item)
+# img = Image.open('./static/NDMIApril1.png')
+# img = img.convert("RGBA")
+# datas = img.getdata()
+# newData = []
+# for item in datas:
+#     if item[0] == 0 and item[1] == 0 and item[2] == 0:
+#         newData.append((0, 0, 0, 0))
+#     else:
+#         newData.append(item)
  
-img.putdata(newData)
-img.save('./static/NDMIApril1.png', "PNG")
+# img.putdata(newData)
+# img.save('./static/NDMIApril1.png', "PNG")
