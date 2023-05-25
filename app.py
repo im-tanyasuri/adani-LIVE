@@ -612,7 +612,7 @@ if check_password():
         col1, col2 = st.columns( [0.8, 0.2])
         with col1:               # To display the header text using css style
             if option_3 == "Temperature":
-                map = folium.Map(location=[22.606939204923812,74.11067787159304], zoom_start=11, scrollWheelZoom=True, tiles='Stamen Terrain')
+                map = folium.Map(location=[22.5627416667, 73.45485], zoom_start=11, scrollWheelZoom=True, tiles='Stamen Terrain')
             
                 folium.TileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
                         attr='ArcGIS',
