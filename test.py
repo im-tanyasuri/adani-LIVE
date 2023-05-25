@@ -77,11 +77,11 @@ import csv
 df = pd.read_csv('./static/adani_report.csv')
 #df = df.dropna(thresh=4)
 #df = pd.read_csv('./static/GeneratedReport - GeneratedReport.csv')
-insights = ["Temperature"]
-#insights = [ "Vegetation encroachment","Land Subsidence","Potential Fouling","Corrosion"]
+#insights = ["Temperature"]
+insights = [ "Temperature","Vegetation encroachment","Land Subsidence","Potential Fouling","Corrosion"]
 for i in insights:
     df_temp = df[['latitude', 'longitude','name', i]]
-    df_temp = df_temp.dropna(thresh=3)
+    df_temp = df_temp.dropna(thresh=4)
     #df_temp = df_temp.loc[df_temp[i] == ]
 
     df_temp.to_csv('./static/{}.csv'.format(''.join(i)),index = False)
@@ -146,23 +146,23 @@ for i in insights:
 
 #     ) as dst:
 #         dst.write(file_)
-im = Image.open('./static/HOTSPOT.tif')
-im.save('./static/HOTSPOT.png')
-print(im)
+# im = Image.open('./static/HOTSPOT.tif')
+# im.save('./static/HOTSPOT.png')
+# print(im)
 
 
-img = Image.open('./static/HOTSPOT.png')
-img = img.convert("RGBA")
-datas = img.getdata()
-newData = []
-for item in datas:
-    if item[0] == 0 and item[1] == 0 and item[2] == 0:
-        newData.append((0, 0, 0, 0))
-    else:
-        newData.append(item)
+# img = Image.open('./static/HOTSPOT.png')
+# img = img.convert("RGBA")
+# datas = img.getdata()
+# newData = []
+# for item in datas:
+#     if item[0] == 0 and item[1] == 0 and item[2] == 0:
+#         newData.append((0, 0, 0, 0))
+#     else:
+#         newData.append(item)
  
-img.putdata(newData)
-img.save('./static/HOTSPOT.png', "PNG")
+# img.putdata(newData)
+# img.save('./static/HOTSPOT.png', "PNG")
 # from rasterio.merge import merge
 # import rasterio as rio
 
