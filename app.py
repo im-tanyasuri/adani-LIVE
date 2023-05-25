@@ -746,6 +746,7 @@ if check_password():
 
                 
 
+        
     elif choose =="Drone Services":
         col1,col2 = st.columns([0.94,0.06])
         with col1:
@@ -774,46 +775,39 @@ if check_password():
                 video_bytes = video_file.read()
                 drone = st.video(video_bytes)
 
-        
-                # with col2 : 
-                #         st.markdown(" ")
-                #         st.markdown(" ")
-                #         st.markdown(" ")
-                #         st.markdown(" ")
-                #         st.markdown(" ")
-                #         st.markdown(" ")
-                #         st.markdown(" ")
-                #         st.markdown(" ")
-                #         st.markdown(" ")
-                #         st.markdown(" ")
-                #         st.markdown(f"<span style='font-size: 18px'>Mean Height</span>", unsafe_allow_html=True)
-                #         meanval = "6.54 m"
-                #         st.markdown(f"<span style='font-size: 35px'>{meanval}</span>", unsafe_allow_html=True)
-                #         st.markdown("""-------------------""")
-                #         st.markdown(f"<span style='font-size: 18px'>Highest Tree</span>", unsafe_allow_html=True)
-                #         meanval = "8.32 m"
-                #         st.markdown(f"<span style='font-size: 35px'>{meanval}</span>", unsafe_allow_html=True)
-                # elif vid: 
-                
-                #     video_file = open('./static/drone.webm', 'rb')
-                #     video_bytes = video_file.read()
-                #     drone = st.video(video_bytes)
-                    # if st.button('Back to point cloud video'):
-                    #     pt.empty()
-                    #     video_file = open('./static/drone.webm', 'rb')
-                    #     video_bytes = video_file.read()
-                    #     drone = st.video(video_bytes)
+                an = st.button('Show Analysis')
+                #vid = st.button('3D point cloud')
+                if an:
                     
-
-
+                    drone.empty()
                 
-                # pt_cloud = Image.open("./static/3d_pc.png")
-                # st.image(pt_cloud, width=1000)
-                # video_file = open('./static/drone.webm', 'rb')
-                # video_bytes = video_file.read()
-                # drone = st.video(video_bytes)
+                    pt = st.image(pt_cloud, caption='3D Encraochment analysis',use_column_width=True)
+                    
+                    an = st.button('Back to 3D point cloud video')
+                    if an:
+                        video_file = open('./static/drone.webm', 'rb')
+                        video_bytes = video_file.read()
+                        drone = st.video(video_bytes)
+                    with col2 : 
+                        st.markdown(" ")
+                        st.markdown(" ")
+                        st.markdown(" ")
+                        st.markdown(" ")
+                        st.markdown(" ")
+                        st.markdown(" ")
+                        st.markdown(" ")
+                        st.markdown(" ")
+                        st.markdown(" ")
+                        st.markdown(" ")
+                        st.markdown(f"<span style='font-size: 18px'>Mean Height</span>", unsafe_allow_html=True)
+                        meanval = "6.54 m"
+                        st.markdown(f"<span style='font-size: 35px'>{meanval}</span>", unsafe_allow_html=True)
+                        st.markdown("""-------------------""")
+                        st.markdown(f"<span style='font-size: 18px'>Highest Tree</span>", unsafe_allow_html=True)
+                        meanval = "8.32 m"
+                        st.markdown(f"<span style='font-size: 35px'>{meanval}</span>", unsafe_allow_html=True)
 
-        
+            
 
         
             # with col2:
