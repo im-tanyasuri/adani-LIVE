@@ -876,7 +876,7 @@ if check_password():
 
         elif measure =="Vegetation encroachment":
             df_temp = df[['latitude', 'longitude','name', 'Vegetation encroachment']]
-            df_temp = df_temp.loc[df_temp['Vegetation encroachment'] == 1]
+            df_temp = df_temp.loc[df_temp['Vegetation encroachment'] == 'low' or df_temp['Vegetation encroachment'] == 'Moderate' or df_temp['Vegetation encroachment'] == 'high']
             df_temp["tuple"] = df_temp[["latitude","longitude"]].apply(tuple, axis=1)
             map = folium.Map(location=[22.606939204923812,74.11067787159304], zoom_start=11, scrollWheelZoom=True, tiles='Stamen Terrain')
             
