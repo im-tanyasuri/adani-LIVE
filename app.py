@@ -849,7 +849,7 @@ if check_password():
 
     elif choose =="Report Generation":
         col1,col2 = st.columns([0.94,0.06])
-        df = pd.read_csv('./static/report.csv')
+        df = pd.read_csv('./static/adani_report.csv')
         measure = st.selectbox("Insight", ["Temperature", "Vegetation encroachment","Land Subsidence","Potential Fouling","Corrosion"])
         if measure =="Temperature":
             df_temp = df[['latitude', 'longitude', 'name','Temperature']]
