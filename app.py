@@ -724,7 +724,7 @@ if check_password():
         with col2:   
             
             if option_3 == "Fire Hotspots":
-                st.image(Image.open("./static/try.png"))
+                st.image(Image.open("./static/Fire_legend.png"))
 
 
             elif option_3 =="Temperature":
