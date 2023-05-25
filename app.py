@@ -578,7 +578,7 @@ if check_password():
         #     Month = st.selectbox("Month", ["Month"])
         with col1:
             
-            option_3 = st.selectbox("Insight", ["Temperature", "Moisture Index","Fire Hotspots"])
+            option_3 = st.selectbox("Insight", ["Temperature", "Moisture Index"])
 
         col1, col2 = st.columns( [0.8, 0.2])
         with col1:               # To display the header text using css style
