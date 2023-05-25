@@ -468,11 +468,11 @@ if check_password():
                         folium.CircleMarker(location=locations[i],radius=30,color='red',line_width=50, opacity=5).add_to(map)
                         folium.Marker(location=locations[i],
                             icon= folium.Icon(color='blue',
-                            icon_color='yellow',icon ="tower"),popup='Name : {} \n Coordinates: {}'.format('name',locations[i])).add_to(map)
+                            icon_color='yellow',icon ="tower"),popup='Name : {} \n Coordinates: {}'.format(names[i],locations[i])).add_to(map)
                     else:
                         folium.Marker(location=locations[i],
                             icon= folium.Icon(color='blue',
-                            icon_color='yellow',icon ="tower"),popup='Name : {} \n Coordinates: {}'.format('name',locations[i])).add_to(map)
+                            icon_color='yellow',icon ="tower"),popup='Name : {} \n Coordinates: {}'.format(names[i],locations[i])).add_to(map)
                 polygon = folium.Polygon(locations=verticesROW, color='black', fill_color=None, fill_opacity=1.0).add_to(map)
                 
 
